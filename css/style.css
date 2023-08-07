@@ -1,0 +1,434 @@
+/* font */
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap);
+
+/* font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Montserrat', sans-serif; */
+
+/* Global */
+:root{
+    /* color */
+    --color-white:#fff;
+    --color-black:#0e0f0f;
+    --color-black-opacity:rgba(0,0,0,.65);
+    --color-blue:#4082f4;
+    --color-orange:#fd6413;
+    --color-gray: #232425;
+    --color-gray200: #3c3e3f;
+    --color-yellow:#ffc03c;
+    --color-green:#1fdf5c;
+    --color-pink: #fe6d79;
+    /* size */
+    --size-max-width:1200px;
+    /* site colors */
+    --color-primary:var(--color-black);
+    --color-primary-opacity:var(--color-black-opacity);
+    --color-primary-variant:var(--color-gray);
+    --color-primary-variant200:var(--color-gray200);
+    --color-accent:var(--color-yellow);
+    --color-accent-variant:var(--color-orange);
+    --color-text:var(--color-white);
+
+    /* background */
+    --home-bg-svg:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='428' height='428' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23161614' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%231C1C1C'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+}
+/* CSS에서 변수를 사용하려면 최상위 요소(우선순위가 높은)에 선언해줘야 함
+보통 컬러에 많이 쓰고, 선언하기 위해 --(하이픈2개)변수이름 식으로 사용 */
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    line-height:1.5;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul,li,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:var(--color-text);
+}
+button{
+    background-color: transparent;
+    border: none;
+    outline:none;
+}
+/* Common */
+.section{
+        padding: 4rem;
+        text-align: center;
+}
+.max-container{
+    margin: auto;
+    max-width: var(--size-max-width);
+}
+.title{
+        font-size: 2.5rem;
+        margin: 1rem 0;
+}
+
+.description {
+    font-size:1.5rem;
+    margin: 0.5rem 0;
+}
+
+/* bg-svg */
+
+
+/* divider */
+#home .divider-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+#home .divider-bottom svg {
+    position: relative;
+    display: block;
+    width: calc(122% + 1.3px);
+    height: 76px;
+}
+
+#home .divider-bottom .shape-fill {
+    fill: var(--color-white);
+}
+
+.divider-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.divider-top svg {
+    position: relative;
+    display: block;
+    width: calc(122% + 1.3px);
+    height: 76px;
+}
+
+.divider-top .shape-fill {
+    fill: #FFFFFF;
+}
+  /* header */
+.header{
+    background-color:var(--color-primary-opacity);
+    position: fixed;
+    top:0;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+.header_logo{
+    display: flex;
+    align-items: center;
+}
+.header_logo_img{width: 36px;height: 36px;margin: 4px;}
+.header_logo_title{font-size:1.625rem ;}
+.header_menu{display: flex;}
+.header_menu_item{padding: 8px 16px;margin: 4px;}
+.header_menu_item:hover{border-bottom: 1px solid var(--color-accent);}
+.header_menu_item.active{
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+}
+
+  /* 모바일에서 나타날 햄버거버튼 */
+.header_toggle{display: none;}
+  
+/* home */
+#home{
+    background-color: var(--color-primary);
+    color:var(--color-text);
+    padding: 5rem 1rem;
+    text-align: center;
+    position: relative; /* 디바이더의 위치 설정 */
+    background-image: var(--home-bg-svg);
+}
+.home_avatar{
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    border: 3px solid var(--color-accent);
+}
+.home_title{
+    font-size: 3rem;
+    margin-bottom:1rem;
+}
+.home_title strong{
+    color:var(--color-accent)
+}
+.home_description{
+    font-size: 1.25rem;
+}
+.home_contact{
+    background-color: var(--color-accent);
+    margin: 2rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    display: inline-block;
+    border: 1px solid transparent;
+}
+.home_contact:hover{
+    background-color: transparent;
+    color: var(--color-text);
+    border:1px solid var(--color-accent);
+}
+
+  /* About */
+.majors{
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0;
+}
+.major{
+    background-color: var(--color-primary-variant);
+    padding: 2rem 1rem;
+    color: var(--color-text);
+    border-radius: 16px;
+    box-shadow: 4px 8px 6px rgba(0,0,0,.35);
+    margin: 0 0.5rem;
+    cursor:default;
+}
+.major_icon{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    transition: all 300ms;
+}
+.major:hover .major_icon{
+    transform: rotate(-15deg) scale(1.2);
+}
+
+/* skills */
+#skills{
+    background-color:  var(--color-primary-variant);
+    color:var(--color-text);
+    position: relative;
+}
+.skills{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 3rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,.35);
+}
+.skills_point{flex:60%}
+.skill_tools_box{flex:40%}
+.skill_title{
+    color:var(--color-accent);
+    margin:1rem 0;
+    font-size: 1.25rem;
+}
+.bar{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin:0.5rem;
+}
+.bar_data{
+    display: flex;
+    justify-content: space-between;
+}
+.bar_bg{
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-primary-variant200);
+}
+.bar_value{
+    height: 4px;
+    background-color: var(--color-accent);
+}
+.skill_tools{padding: 1rem;}
+.skill_etc{padding: 1rem;}
+
+/* Work */
+#work{
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+.categories{
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem;
+}
+.categories>li{margin: 0 0.5rem;}
+
+.category{
+    font-size: 1.125rem;
+    padding:0.5rem 3rem ;
+    border-radius: 4px;
+    border: 1px solid var(--color-accent);
+    cursor: pointer;
+    color: var(--color-text);
+    position: relative;
+}
+.category_count{
+    width: 28px;height: 28px;
+    border-radius: 50%;
+    background-color: var(--color-accent-variant);
+    color: var(--color-text);
+    display: flex;
+    align-items:center;
+    justify-content: center; 
+    position: absolute;
+    top: -20px;
+    right: 16px;
+    opacity: 0;
+    transition:all 250ms;
+}
+.category.selected{
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.category:hover .category_count{
+    opacity: 1;
+    top:-10px;
+}
+.projects{
+    display: flex;
+    flex-wrap: wrap;
+}
+.project{
+    position: relative;
+    border-radius: 8px;
+    flex:0 0 calc(25% - 16px);
+    margin:8px;
+    width: calc(25% - 16px);
+}
+.project_img{
+    width: 100%;
+}
+.project_data{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(-10px);
+    transition: all 250ms;
+}
+.project_data:hover{
+    opacity: 0.8;
+    transform: translateY(0px);
+}
+
+.arrow_up{
+    background-color: var(--color-primary);
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    font-size: 3rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    box-shadow: 4px 4px 0px var(--color-accent);
+    text-align: center;
+}
+
+  /* footer */
+#contact{
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+.contact_link{
+    padding: 1rem;
+    font-size: 2rem;
+}
+.contact_link:hover{
+    color: var(--color-accent);
+}
+address{
+    font-style: normal;
+}
+
+@media screen and (max-width:768px){
+    .section{
+        padding: 3rem 2rem;
+    }
+    .description{
+        font-size: 1rem;
+    }
+    .header{
+        flex-direction: column;
+        align-items: start;
+    }
+    .header_menu{
+        flex-direction: column;
+        padding: 1rem 4rem;
+        text-align: center;
+    }
+    .header_menu>li{
+        margin-bottom: 2rem;
+    }
+    .header_nav{
+        width: 100%;
+        
+    }
+    .header_nav.on{
+        display: none; /* 스크립트처리 */
+    }
+    .header_toggle{
+        display: block;
+        font-size: 2rem;
+        color: var(--color-white);
+        position: absolute;
+        right: 1rem;
+        top: 1.3rem;
+    }
+    .home_title{
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .home_title strong{
+        display: block;
+    }
+    .majors{
+        flex-direction: column;
+        align-items: center;
+    }
+    .major{
+        max-width: 25rem;
+        margin-bottom: 1rem;
+    }
+    .skills_point{
+        flex:100%;
+    }
+    .skill_tools_box{
+        flex: 100%;
+    }
+    .categories{
+        flex-direction: column;
+    }
+    .category{
+        width: 100%;
+    }
+    .project{
+        flex: 0 0 calc(50% - 16px);
+        width: calc(50% - 16px);
+    }
+    .project_data{
+        font-size: 0.875rem;
+    }
+}
